@@ -1,11 +1,23 @@
 fetch("https://api.github.com/users/Nataly-li")
   .then((res) => res.json())
   .then((json) => {
-    const avatarUrl = json.avatar_url;
-    const name = json.name;
-    const url = json.url;
-    const htmlUrl = json.html_url;
-    console.log(json);
-    let img = new Image();
-    img.src = "https://avatars.githubusercontent.com/u/63913225?v=4";
-  });
+    let nameLink = document.createElement("a");
+    nameLink.id = "link";
+    nameLink.href = json.html_url;
+    nameLink.title = "Link";
+    nameLink.innerHTML = "Nataly-li";
+    document.body.appendChild(nameLink);
+
+    let divBio = document.createElement("div");
+    divBio.id = "bio";
+    if (json.bio === null) {
+      divBio.innerHTML = "Every cloud has a silver lining.";
+    }
+
+    document.body.appendChild(divBio);
+    let img = new Image(250, 250);
+    img.src = json.avatar_url;
+    img.style.display = "block";
+    document.body.appendChild(img);
+  })
+  .catch((err) => console.log("Информация о пользователе не надена."));
