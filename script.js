@@ -2,7 +2,7 @@ fetch("https://api.github.com/users/Nataly-li")
   .then((res) => res.json())
   .then((json) => {
     try {
-      let userName = window.location.toString().split()[0].slice(49, 58);
+      let userName = window.location.toString().split()[0].slice(49);
 
       let nameLink = document.createElement("a");
       nameLink.id = "link";
