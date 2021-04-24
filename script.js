@@ -2,8 +2,8 @@ fetch("https://api.github.com/users/Nataly-li")
   .then((res) => res.json())
   .then((json) => {
     try {
-      let userName = window.location.toString().split()[0].slice(49);
-
+      let userName = window.location.toString().split("=")[1];
+      
       let nameLink = document.createElement("a");
       nameLink.id = "link";
       nameLink.href = json.html_url;
