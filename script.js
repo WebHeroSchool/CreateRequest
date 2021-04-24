@@ -1,4 +1,4 @@
-fetch(`https://api.github.com/users/${Nataliia_Donchenko}`)
+fetch("https://api.github.com/users/Nataly-li")
   .then((res) => res.json())
   .then((json) => {
     try {
