@@ -1,9 +1,9 @@
-fetch("https://api.github.com/users/Nataly-li")
+fetch(`https://api.github.com/users/${Nataliia_Donchenko}`)
   .then((res) => res.json())
   .then((json) => {
     try {
       let userName = window.location.toString().split("=")[1];
-      
+
       let nameLink = document.createElement("a");
       nameLink.id = "link";
       nameLink.href = json.html_url;
