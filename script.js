@@ -1,14 +1,14 @@
-fetch("https://api.github.com/users/Nataly-li")
+let username = window.location.toString().split("=")[1];
+
+fetch(`https://api.github.com/users/${username}`)
   .then((res) => res.json())
   .then((json) => {
     try {
-      let userName = window.location.toString().split("=")[1];
-
       let nameLink = document.createElement("a");
       nameLink.id = "link";
       nameLink.href = json.html_url;
       nameLink.title = "Link";
-      nameLink.innerHTML = userName;
+      nameLink.innerHTML = json.name;
       document.body.appendChild(nameLink);
 
       if (!userName || userName == "") {
