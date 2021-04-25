@@ -1,14 +1,15 @@
 let username = window.location.toString().split("=")[1];
-console.log(username);
+
 if (username === undefined) {
-  document.body.innerHTML = "Nataly-li";
-}
+  username = "Nataly-li";
+};
 
 fetch(`https://api.github.com/users/${username}`)
   .then((res) => res.json())
   .then((json) => {
-    if (!username) {
+    if (!json.name) {
       alert("Информация о пользователе недоступна.");
+      document.body.innerHTML = "Пользователь не найден.";
     }
 
     let nameLink = document.createElement("a");
