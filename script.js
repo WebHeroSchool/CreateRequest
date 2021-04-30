@@ -14,12 +14,12 @@ const getName = new Promise((resolve, reject) => {
 });
 
 const getUrl = new Promise((resolve, reject) => {
-  setTimeout(() => (url ? resolve(url) : reject("Ссылка не найдена")), 3000);
+  setTimeout(() => (url ? resolve(url) : reject("Ссылка не найдена.")), 3000);
 });
 
 const getDate = new Promise((resolve, reject) => {
   setTimeout(
-    () => (date ? resolve(date) : reject("Ошибка вычисления времени")),
+    () => (date ? resolve(date) : reject("Ошибка вычисления времени.")),
     3000
   );
 });
