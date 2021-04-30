@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="preloader">
+    <svg class="filter" version="1.1">
+      <defs>
+        <filter id="gooeyness">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -10" result="gooeyness" />
+          <feComposite in="SourceGraphic" in2="gooeyness" operator="atop" />
+        </filter>
+      </defs>
+    </svg>
+  <div class="dots">
+    <div class="dot mainDot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
+</div>
+    <script src="./script.js" type="text/javascript"></script>
+  </body>
+</html>
