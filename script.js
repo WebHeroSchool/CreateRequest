@@ -3,11 +3,6 @@ let username = window.location.toString().split()[1];
 let url = "https://api.github.com/users/";
 let date = new Date();
 
-const getPreloader = new Promise((resolve, reject) => {
-  resolve(preloader);
-  reject("Загрузка");
-});
-
 const getName = new Promise((resolve, reject) => {
   setTimeout(
     () =>
@@ -29,8 +24,8 @@ const getDate = new Promise((resolve, reject) => {
   );
 });
 
-Promise.all([getPreloader, getName, getUrl, getDate])
-  .then(([preloader, username, url, date]) => fetch(`${url}${username}`))
+Promise.all([getName, getUrl, getDate])
+  .then(([username, url, date]) => fetch(`${url}${username}`))
   .then((res) => res.json())
   .then((json) => {
     setTimeout(() => (preloader.style.display = "none"), 3000);
